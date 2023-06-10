@@ -12,26 +12,27 @@ header {
     text-transform: uppercase;
     letter-spacing: 2px;
   }
+  
   /* Styles for the container */
   .container {
-    text-align: center;
+    text-align: left;
     max-width: 400px;
-    margin: 0 auto;
+    margin: 0;
     padding: 20px;
   }
   
   /* Styles for the form */
   #weatherForm {
-    margin-bottom: 20px;
+    margin-top: 20px;
+    text-align: left;
   }
   
   input[type="text"] {
-    width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
+    margin-right: 10px;
   }
   
-  button {
+  button[type="submit"] {
     padding: 10px 20px;
     background-color: #4CAF50;
     color: #fff;
@@ -39,22 +40,10 @@ header {
     cursor: pointer;
   }
   
-  /* Styles for the weather info */
-  #weatherInfo {
-    margin-top: 20px;
-  }
-  
-  p {
-    margin-bottom: 5px;
-  }
-  
-  span {
-    font-weight: bold;
-  }
-  
   /* Styles for the search history */
   #searchHistory {
     margin-top: 20px;
+    text-align: left;
   }
   
   h2 {
@@ -69,4 +58,3 @@ header {
   li {
     margin-bottom: 5px;
   }
-  
