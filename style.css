@@ -1,15 +1,17 @@
 /* Styles for the header */
 header {
-    background-color: darkslategrey;
+    background-color: #333;
     padding: 20px;
     text-align: center;
   }
   
   h1 {
     color: #fff;
-    font-size: 24px;
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
   }
-  
   /* Styles for the container */
   .container {
     text-align: center;
