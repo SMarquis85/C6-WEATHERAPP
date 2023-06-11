@@ -2,7 +2,7 @@
 header {
   background: linear-gradient(to bottom, #606060, #222);
   padding: 20px;
-  text-align: center;
+  text-align: center; /* Align the text to the left */
 }
 
 h1 {
@@ -12,55 +12,57 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 2px;
 }
-  
-  /* Styles for the container */
-  .container {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  /* Styles for the form */
-  #weatherForm {
-    margin-top: 20px;
-    text-align: left;
-  }
-  
-  input[type="text"] {
-    padding: 10px;
-    margin-right: 10px;
-  }
-  
-  button[type="submit"] {
-    padding: 10px 40px;
-    width: 185px;
-    background-color: #4CAF50;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-  }
 
-  /* Styles for the search history */
-  #searchHistory {
-    margin-top: 20px;
-    text-align: left;
-  }
-  
-  h2 {
-    font-size: 18px;
-  }
-  
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  li {
-    margin-bottom: 5px;
-  }
+/* Styles for the container */
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-  
+/* Styles for the form */
+#weatherForm {
+  text-align: left;
+}
+
+button[type="submit"] {
+  padding: 10px 40px;
+  width: 185px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  align-self: flex-start;
+}
+
+input[type="text"] {
+  padding: 10px;
+  margin-right: 10px;
+}
+
+/* Styles for the search history */
+#searchHistory {
+  text-align: left;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+.info {
+  width: 50%;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 5px;
+}

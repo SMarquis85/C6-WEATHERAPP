@@ -34,7 +34,7 @@ function updateCurrentWeatherInfo(data) {
   locationElement.textContent = 'Location: ' + data.city.name;
   dateElement.textContent = 'Date: ' + getCurrentDate();
   iconElement.innerHTML = '<img src="http://openweathermap.org/img/wn/' + data.list[0].weather[0].icon + '.png" alt="Weather Icon">';
-  temperatureElement.textContent = 'Temperature: ' + data.list[0].main.temp + '°C';
+  temperatureElement.textContent = 'Temperature: ' + convertKelvinToCelsius(data.list[0].main.temp) + '°C';
   humidityElement.textContent = 'Humidity: ' + data.list[0].main.humidity + '%';
   windElement.textContent = 'Wind Speed: ' + data.list[0].wind.speed + ' m/s';
 }
@@ -59,7 +59,7 @@ function displayForecast(data) {
     forecastItem.appendChild(iconElement);
 
     var temperatureElement = document.createElement("p");
-    temperatureElement.textContent = 'Temperature: ' + forecast.main.temp + '°C';
+    temperatureElement.textContent = 'Temperature: ' + convertKelvinToCelsius(forecast.main.temp) + '°C';
     forecastItem.appendChild(temperatureElement);
 
     var humidityElement = document.createElement("p");
@@ -72,6 +72,10 @@ function displayForecast(data) {
 
     forecastContainer.appendChild(forecastItem);
   }
+}
+
+function convertKelvinToCelsius(kelvin) {
+  return Math.round(kelvin - 273.15);
 }
 
 function addSearchToHistory(location) {
