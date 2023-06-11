@@ -33,13 +33,14 @@ h1 {
   }
   
   button[type="submit"] {
-    padding: 15px 30px;
+    padding: 10px 40px;
+    width: 185px;
     background-color: #4CAF50;
     color: #fff;
     border: none;
     cursor: pointer;
   }
-  
+
   /* Styles for the search history */
   #searchHistory {
     margin-top: 20px;
