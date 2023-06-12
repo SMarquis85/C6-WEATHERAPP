@@ -50,7 +50,6 @@ $SearchBtn.on('click', function (event) {
             var HumidValue = data['main']['humidity'];
             var ImgValue = data.weather[0].icon;
 
-
             CityName.innerHTML = (CityValue + " ");
             var convertTemp = Math.trunc(TemperValue - 273.15);
             Temp.innerHTML = "Temperature: " + convertTemp + " °C";;
