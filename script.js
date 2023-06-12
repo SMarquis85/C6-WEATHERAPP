@@ -36,16 +36,9 @@ function BTNCreator(){
     }
 }
 
-
-
-
-
-
 $SearchBtn.on('click', function (event) {
     console.log(Input.value);
     
-    
-
     // Fetch request to get current citys info
     fetch('https://api.openweathermap.org/data/2.5/weather?q=' + Input.value + '&appid=ec96c3d6509b8a012ba07a86b8f2719b')
         .then(response => response.json())
@@ -63,12 +56,9 @@ $SearchBtn.on('click', function (event) {
             Temp.innerHTML = "Temperature: " + convertTemp + " °C";;
             Wind.innerHTML = ("Wind: " + windValue + " mph");
             Humid.innerHTML = ("Humidity: " + HumidValue);
-
-
             createImage.src= "http://openweathermap.org/img/wn/" + ImgValue + ".png";
             
             document.getElementById('Index').append(createImage);
-
             HistoryCities.push(CityValue);
             localStorage.setItem('saved', JSON.stringify(HistoryCities));
             addEntry(); 
