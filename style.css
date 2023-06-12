@@ -1,68 +1,130 @@
-/* Styles for the header */
-header {
-  background: linear-gradient(to bottom, #606060, #222);
-  padding: 20px;
-  text-align: center; /* Align the text to the left */
-}
-
-h1 {
-  color: #fff;
-  font-size: 32px;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-/* Styles for the container */
-.container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-/* Styles for the form */
-#weatherForm {
-  text-align: left;
-}
-
-button[type="submit"] {
-  padding: 10px 40px;
-  width: 185px;
-  background-color: #4CAF50;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  margin-top: 10px;
-  align-self: flex-start;
-}
-
-input[type="text"] {
-  padding: 10px;
-  margin-right: 10px;
-}
-
-/* Styles for the search history */
-#searchHistory {
-  text-align: left;
+:root {
+  --fontcolor: black;
+  --primary: #4d4df6;
+  --secondary: rgb(31, 31, 192);
 }
 
 h2 {
-  font-size: 18px;
+  margin: 0;
 }
 
-.info {
-  width: 50%;
+input {
+  padding: 3px 10px;
+  text-align: center;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
+button {
+  padding: 3px 10px;
+  font-size: 12px;
+  background-color: rgb(237, 237, 243);
+  
 }
 
-li {
-  margin-bottom: 5px;
+button:hover{
+  background-color: rgb(202, 202, 207);
+}
+
+
+header {
+  color: white;
+  size: 100px;
+  text-align: center;
+  font-family: sans-serif; 
+  background: #4d4df6;
+  margin-bottom: 10px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+
+}
+
+.lighting {
+  animation: flicker 1.5s infinite alternate;
+  color: beige;
+}
+
+body {
+  margin: 0;
+  background-color: rgb(5, 44, 70);;
+}
+
+/* Styling for side sections */
+aside {
+  margin-right: 20px;
+  color: white;
+  padding: 20px;
+  clear: both;
+  float: left;
+  width: 20%;
+  height: 100%;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: var(--primary);
+}
+
+#topSide {
+  border-bottom: 3px solid whitesmoke;
+}
+
+/* styling for main sections */
+.CityDet {
+  display: inline-block;
+  width: 75%;
+  border: inset var(--primary) 5px;
+  font-family: cursive;
+
+}
+
+.TextCont {
+  text-align: center;
+  color: white;
+}
+
+#CityName {
+  margin: 0;
+  padding-bottom: 10px;
+  font-size: 35px;
+  background: linear-gradient(110deg, blue 50%, rgb(31, 31, 192) 50%);
+
+}
+
+.WeatherCards {
+  float: right;
+  display:inline-table;
+  margin-right: 27px;
+  width: 75%;
+  background-color: rgb(5, 44, 70);
+  border: inset var(--primary) 5px;
+  font-family: cursive;
+
+}
+#fiveDayFor{
+  color: white;
+  text-align: center;
+  padding: 20px;
+  border: 8px solid;
+  border-image: linear-gradient(to left, #efd68e, blue) 1 0;
+}
+
+.BorderCards{
+  color: whitesmoke;
+  margin-top: 0px;
+  text-align: center;
+  font-family: sans-serif;
+  justify-content: space-between;
+  border: 8px solid;
+  border-image: linear-gradient(to bottom, blue, #efd68e) 0 1;
+  margin-left: 10px;
+  width:18%;
+  float: left;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+}
+
+#image{
+  border: solid black 5px;
+}
+
+.ClearHistory{
+  margin-left: 10px;
+  float:left;
 }
