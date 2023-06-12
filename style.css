@@ -68,9 +68,7 @@ aside {
 .CityDet {
   display: inline-block;
   width: 75%;
-  border: inset var(--primary) 5px;
   font-family: cursive;
-
 }
 
 .TextCont {
@@ -82,7 +80,6 @@ aside {
   margin: 0;
   padding-bottom: 10px;
   font-size: 35px;
-  background: linear-gradient(110deg, blue 50%, rgb(31, 31, 192) 50%);
 
 }
 
@@ -92,7 +89,6 @@ aside {
   margin-right: 27px;
   width: 75%;
   background-color: rgb(5, 44, 70);
-  border: inset var(--primary) 5px;
   font-family: cursive;
 
 }
@@ -110,7 +106,6 @@ aside {
   text-align: center;
   font-family: sans-serif;
   justify-content: space-between;
-  border: 8px solid;
   border-image: linear-gradient(to bottom, blue, #efd68e) 0 1;
   margin-left: 10px;
   width:18%;
@@ -127,4 +122,20 @@ aside {
 .ClearHistory{
   margin-left: 10px;
   float:left;
+}
+
+.ClearHistory {
+  position: flex;
+  bottom: 400px;
+  left: 10px;
+}
+
+#Clear {
+  padding: 3px 10px;
+  font-size: 12px;
+  background-color: rgb(237, 237, 243);
+}
+
+#Clear:hover {
+  background-color: rgb(202, 202, 207);
 }

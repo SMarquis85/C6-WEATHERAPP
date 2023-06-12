@@ -59,8 +59,8 @@ $SearchBtn.on('click', function (event) {
 
 
             CityName.innerHTML = (CityValue + " ");
-            var convertTemp = Math.trunc(1.8 * (TemperValue - 273) + 32);
-            Temp.innerHTML = ("Temperature: " + convertTemp + " °F");
+            var convertTemp = Math.trunc(TemperValue - 273.15);
+            Temp.innerHTML = "Temperature: " + convertTemp + " °C";;
             Wind.innerHTML = ("Wind: " + windValue + " mph");
             Humid.innerHTML = ("Humidity: " + HumidValue);
 
@@ -77,7 +77,7 @@ $SearchBtn.on('click', function (event) {
     .catch(err => alert("Wrong city name"))
 
     // fetch request to get 5-day forecast
-    fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + Input.value + '&units=imperial&appid=ec96c3d6509b8a012ba07a86b8f2719b')
+    fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + Input.value + '&units=metric&appid=ec96c3d6509b8a012ba07a86b8f2719b')
         .then(response => response.json())
         .then(data => {
             console.log(data);
@@ -198,3 +198,10 @@ $ClearBtn.on('click', function () {
     localStorage.clear();
     location.reload();
 })
+
+// Add this code inside your existing script.js file or include it in a separate JavaScript file
+document.getElementById("Clear").addEventListener("click", function() {
+    // Perform the action to clear the history here
+    // For example, you can clear local storage or perform any other relevant tasks
+    console.log("Clear History button clicked");
+});
