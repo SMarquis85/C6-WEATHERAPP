@@ -30,7 +30,7 @@ THEN I am again presented with current and future conditions for that city
 
 ## Final Work Review
 
-**"Always leave the code a little cleaner than when you found it."**  This action was applied to HTML, CSS and JAVASCRIPT. To create an online weather application from scratch, I used Jon Ducket's JAVASCRIPT & JQuery book, Google, W3Schools, CSSPortal, Snyk and all ZOOM recordings (of previous classes). Looks much cleaner, organised and easier to find what you are looking for. Comments were added in JAVASCRIPT to show what was done and for what purpose.
+**"Always leave the code a little cleaner than when you found it."**  This action was applied to HTML, CSS and JAVASCRIPT. To create an online weather application from scratch, I used Jon Ducket's JAVASCRIPT & JQuery book, references for my style.css on Google, W3Schools, CSSPortal, Snyk and all ZOOM recordings (of previous classes). Looks much cleaner, organised and easier to find what you are looking for. Comments were added in JAVASCRIPT to show what was done and for what purpose.
 
 > **(CARL-VIRT-FSF-PT-04-2023, Challenge 6 / README.md 2023)**
 > **(JAVASCRIPT & JQUERRY, Jon Duckett, Wiley; First edition (June 30 2014) pages 14-292. )**
