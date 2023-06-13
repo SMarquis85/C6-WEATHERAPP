@@ -1,113 +1,76 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Declare global vars
-    var $SearchBtn = $('#SearchBtn');
-    var $ClearBtn = $('#Clear');
-    var Input = document.querySelector('#search-city');
-    var CityName = document.querySelector('#CityName');
-    var Temp = document.querySelector('#Temp');
-    var Wind = document.querySelector('#Wind');
-    var Humid = document.querySelector('#Humidity');
-    var Index = document.querySelector('#Index');
-    var BtnPlace = $('#BtnSpots');
-    let createImage = document.createElement('img');
-    let createImage2 = document.createElement('img');
-    let createImage3 = document.createElement('img');
-    var HistoryCities = $(JSON.parse(localStorage.getItem('saved')));
-  
-    // Assign UserInput to the ID of the textbox
-    addEntry();
-  
-    function addEntry() {
-      HistoryCities.sort();
-      for (var i = 0; i < HistoryCities.length; i++) {
-        if (HistoryCities[i] === HistoryCities[i - 1]) {
-          HistoryCities.splice(i, 1);
-          i--;
+//Declare global Vars
+var $SearchBtn = $('#SearchBtn');
+var $ClearBtn = $('#Clear');
+var Input = document.querySelector('#search-city');
+var CityName = document.querySelector('#CityName');
+var Temp = document.querySelector('#Temp');
+var Wind = document.querySelector('#Wind');
+var Humid = document.querySelector('#Humidity');
+var Index = document.querySelector('#Index');
+var BtnPlace = $('#BtnSpots');
+let createImage= document.createElement('img');
+let createImage2= document.createElement('img');
+let createImage3= document.createElement('img');
+var HistoryCities = $(JSON.parse(localStorage.getItem('saved')));
+
+//assign UserInput to id of textbox
+addEntry();
+function addEntry() {
+    HistoryCities.sort();
+    for (var i = 0; i < HistoryCities.length; i++){
+        if(HistoryCities[i] === HistoryCities[i -1]){
+            HistoryCities.splice(i, 1);
+            i--;
         }
-      }
-      BTNCreator();
     }
-  
-    function BTNCreator() {
-      BtnPlace.children().remove();
-      for (var i = 0; i < HistoryCities.length; i++) {
-        var btn = document.createElement('button');
-        btn.textContent = HistoryCities[i];
+ BTNCreator();
+}
+
+function BTNCreator(){
+    BtnPlace.children().remove();
+    for(var i = 0; i <HistoryCities.length; i++){
+        var btn = document.createElement("button");
+        btn.textContent = (HistoryCities[i]);
         btn.setAttribute('id', 'Relook');
         document.getElementById('BtnSpots').appendChild(btn);
-      }
     }
-  
-    $SearchBtn.on('click', function(event) {
-      var currentDate = new Date();
-      currentDate.setHours(currentDate.getHours() - 5);
-      document.getElementById('CurrentDateTime').textContent = currentDate.toLocaleString();
-  
-      // Fetch request to get current city's info
-      fetch(
-        'https://api.openweathermap.org/data/2.5/weather?q=' +
-          Input.value +
-          '&appid=55a621c514a6bcf2dde6b6f72b563167'
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          var CityValue = data['name'];
-          var TemperValue = data['main']['temp'];
-          var windValue = data['wind']['speed'];
-          var HumidValue = data['main']['humidity'];
-          var ImgValue = data.weather[0].icon;
-  
-          CityName.innerHTML = CityValue + ' ';
-          var convertTemp = Math.trunc(TemperValue - 273.15);
-          Temp.innerHTML = 'Temperature: ' + convertTemp + ' °C';
-          Wind.innerHTML = 'Wind: ' + windValue + ' mph';
-          Humid.innerHTML = 'Humidity: ' + HumidValue;
-          createImage.src = 'http://openweathermap.org/img/wn/' + ImgValue + '.png';
-  
-          document.getElementById('Index').append(createImage);
-          HistoryCities.push(CityValue);
-          localStorage.setItem('saved', JSON.stringify(HistoryCities));
-          addEntry();
+}
+
+$SearchBtn.on('click', function (event) {
+    console.log(Input.value);
+    
+    // Fetch request to get current citys info
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=' + Input.value + '&appid=55a621c514a6bcf2dde6b6f72b563167')
+        .then(response => response.json())
+        .then(data => {
+            //console.log(data);
+            var CityValue = data['name'];
+            var TemperValue = data['main']['temp'];
+            var windValue = data['wind']['speed'];
+            var HumidValue = data['main']['humidity'];
+            var ImgValue = data.weather[0].icon;
+
+            CityName.innerHTML = (CityValue + " ");
+            var convertTemp = Math.trunc(TemperValue - 273.15);
+            Temp.innerHTML = "Temperature: " + convertTemp + " °F";;
+            Wind.innerHTML = ("Wind: " + windValue + " mph");
+            Humid.innerHTML = ("Humidity: " + HumidValue);
+            createImage.src= "http://openweathermap.org/img/wn/" + ImgValue + ".png";
+            
+            document.getElementById('Index').append(createImage);
+            HistoryCities.push(CityValue);
+            localStorage.setItem('saved', JSON.stringify(HistoryCities));
+            addEntry(); 
         })
-        .catch((err) => alert('Wrong city name'));
 
-// Fetch request to get current city's info
-  fetch(
-    'https://api.openweathermap.org/data/2.5/weather?q=' +
-      Input.value +
-      '&appid=55a621c514a6bcf2dde6b6f72b563167'
-  )
-    .then((response) => response.json())
-    .then((data) => {
-      var CityValue = data['name'];
-      var TemperValue = data['main']['temp'];
-      var windValue = data['wind']['speed'];
-      var HumidValue = data['main']['humidity'];
-      var ImgValue = data.weather[0].icon;
-
-      CityName.innerHTML = CityValue + ' ';
-      var convertTemp = Math.trunc(TemperValue - 273.15);
-      Temp.innerHTML = 'Temperature: ' + convertTemp + ' °C';
-      Wind.innerHTML = 'Wind: ' + windValue + ' mph';
-      Humid.innerHTML = 'Humidity: ' + HumidValue;
-      createImage.src = 'http://openweathermap.org/img/wn/' + ImgValue + '.png';
-
-      document.getElementById('Index').append(createImage);
-      HistoryCities.push(CityValue);
-      localStorage.setItem('saved', JSON.stringify(HistoryCities));
-      addEntry();
-    })
-    .catch((err) => alert('Wrong city name'));
+    .catch(err => alert("Wrong city name"))
 
     // fetch request to get 5-day forecast
-    fetch(
-        'https://api.openweathermap.org/data/2.5/forecast?q=' +
-          Input.value +
-          '&units=metric&appid=55a621c514a6bcf2dde6b6f72b563167'
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          var Icon1 = 'https://openweathermap.org/img/w/' + data.list[0].weather[0].icon+ '.png';
+    fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + Input.value + '&units=metric&appid=55a621c514a6bcf2dde6b6f72b563167')
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+                var Icon1 = 'https://openweathermap.org/img/w/' + data.list[0].weather[0].icon+ '.png';
                 $('#Icon1').attr('src', Icon1);
                 document.getElementById("Temp1" ).innerHTML = 'Temp: ' + Number(data.list[0].main.temp).toFixed(0) + "°F";
                 document.getElementById("Wind1").innerHTML = 'Wind: ' + Number(data.list[0].wind.speed) + " Mph";
@@ -153,7 +116,7 @@ $('#BtnSpots').on('click', '#Relook' , function (event) {
     fetch('https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=55a621c514a6bcf2dde6b6f72b563167')
     .then(response => response.json())
     .then(data => {
-        console.log(data);
+        //console.log(data);
         var CityValue = data['name'];
         var TemperValue = data['main']['temp'];
         var windValue = data['wind']['speed'];
@@ -230,6 +193,4 @@ document.getElementById("Clear").addEventListener("click", function() {
     // Perform the action to clear the history here
     // For example, you can clear local storage or perform any other relevant tasks
     console.log("Clear History button clicked");
-});
-
 });
