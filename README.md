@@ -26,18 +26,18 @@ THEN I am presented with a 5-day forecast that displays the date, an icon repres
 WHEN I click on a city in the search history
 THEN I am again presented with current and future conditions for that city
 ```
-> **(Main Task, User Story and Acceptance Criteria / Challenge 5; CARL-VIRT-FSF-PT-04-2023, README.md 2023)** 
+> **(Main Task, User Story and Acceptance Criteria / Challenge 6; CARL-VIRT-FSF-PT-04-2023, README.md 2023)** 
 
 ## Final Work Review
 
-**"Always leave the code a little cleaner than when you found it."**  This action was applied to HTML, CSS and JAVASCRIPT. To create an online Quiz from scratch, I used Jon Ducket's JAVASCRIPT & JQuery book, Google, W3Schools, CSSPortal, Snyk and all ZOOM recordings (of previous classes). Looks much cleaner, organised and easier to find what you are looking for. Comments were added in JAVASCRIPT to show what was done and for what purpose.
+**"Always leave the code a little cleaner than when you found it."**  This action was applied to HTML, CSS and JAVASCRIPT. To create an online weather application from scratch, I used Jon Ducket's JAVASCRIPT & JQuery book, Google, W3Schools, CSSPortal, Snyk and all ZOOM recordings (of previous classes). Looks much cleaner, organised and easier to find what you are looking for. Comments were added in JAVASCRIPT to show what was done and for what purpose.
 
 > **(CARL-VIRT-FSF-PT-04-2023, Challenge 6 / README.md 2023)**
 > **(JAVASCRIPT & JQUERRY, Jon Duckett, Wiley; First edition (June 30 2014) pages 14-292. )**
 
 The following animation demonstrates the application functionality:
 
-> **(I was not able to solve the issue in the code for displaying the correct colors.)**
+> **(I was not able to solve the issue in the code for displaying the correct time.)**
 
 ### How the Weather Dashboard looks:
 
