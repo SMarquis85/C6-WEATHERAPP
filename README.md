@@ -37,7 +37,7 @@ THEN I am again presented with current and future conditions for that city
 
 The following animation demonstrates the application functionality:
 
-> **(I was not able to solve the issue in the code for displaying the correct time.)**
+> **(I was not able to solve the issue in the code for displaying the correct time. I also made the application for desktops ONLY.)**
 
 ### How the Weather Dashboard looks:
 
