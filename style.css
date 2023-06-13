@@ -94,6 +94,12 @@ aside {
   font-family: sans-serif;
 
 }
+
+#CurrentDateTime {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
 #fiveDayFor{
   color: white;
   text-align: center;
